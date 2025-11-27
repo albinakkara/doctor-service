@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.telemedicine</groupId>
-    <artifactId>patient-service</artifactId>
+    <artifactId>doctor-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>patient-service</name>
-    <description>patient-service for telemedicine</description>
+    <name>doctor-service</name>
+    <description>doctor-service for telemedicine</description>
     <url/>
     <licenses>
         <license/>

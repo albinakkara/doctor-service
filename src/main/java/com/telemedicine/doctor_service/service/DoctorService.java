@@ -72,4 +72,7 @@ public class DoctorService {
         return doctorRepository.save(doctor);
     }
 
+    public Doctor validatePatientWithId(Long id) {
+        return doctorRepository.findById(id).orElse(new Doctor());
+    }
 }
