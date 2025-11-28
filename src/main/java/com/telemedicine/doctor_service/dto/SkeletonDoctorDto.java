@@ -15,4 +15,6 @@ public class SkeletonDoctorDto {
     @Email(message = "Invalid email format")
     @NotBlank(message = "Email is required")
     private String email;
+
+    private String specialisation = "";
 }

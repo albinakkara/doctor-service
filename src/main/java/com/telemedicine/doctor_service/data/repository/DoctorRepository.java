@@ -1,6 +1,7 @@
 package com.telemedicine.doctor_service.data.repository;
 
 import com.telemedicine.doctor_service.data.entity.Doctor;
+import com.telemedicine.doctor_service.dto.SkeletonDoctorDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

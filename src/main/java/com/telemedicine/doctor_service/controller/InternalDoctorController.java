@@ -42,4 +42,10 @@ public class InternalDoctorController {
         String doctorEmail = doctorService.getDoctorEmailById(id);
         return ResponseEntity.ok(doctorEmail);
     }
+
+    @GetMapping("/details/{id}")
+    public ResponseEntity<SkeletonDoctorDto> getDoctorDetailsById(@PathVariable("id") Long id){
+        SkeletonDoctorDto dto = doctorService.getDoctorDetailsById(id);
+        return ResponseEntity.ok(dto);
+    }
 }

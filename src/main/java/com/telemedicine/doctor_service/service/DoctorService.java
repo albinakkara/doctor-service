@@ -85,4 +85,14 @@ public class DoctorService {
     public String getDoctorEmailById(Long id) {
         return doctorRepository.findEmailById(id).orElseThrow(()->new RuntimeException("Doctor not found"));
     }
+
+    public SkeletonDoctorDto getDoctorDetailsById(Long id) {
+        Doctor doctor = doctorRepository.findById(id).orElseThrow(()->new RuntimeException("Doctor not found"));
+        SkeletonDoctorDto dto = new SkeletonDoctorDto();
+        dto.setFirstName(doctor.getFirstName());
+        dto.setLastName(doctor.getLastName());
+        dto.setEmail(doctor.getEmail());
+        dto.setSpecialisation(doctor.getSpecialisation());
+        return dto;
+    }
 }
