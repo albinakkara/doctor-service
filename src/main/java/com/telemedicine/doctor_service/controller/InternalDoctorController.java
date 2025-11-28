@@ -27,7 +27,7 @@ public class InternalDoctorController {
         return ResponseEntity.ok(true);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/validate/{id}")
     public ResponseEntity<Boolean> validateDoctorWithId(@PathVariable("id") Long id){
         Doctor doctor = doctorService.validatePatientWithId(id);
         boolean isValid = doctor.getId()!=null && doctor.getId().equals(id);
@@ -35,5 +35,11 @@ public class InternalDoctorController {
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(true, HttpStatus.OK);
+    }
+
+    @GetMapping("/email/{id}")
+    public ResponseEntity<String> getDoctorEmailById(@PathVariable("id") Long id){
+        String doctorEmail = doctorService.getDoctorEmailById(id);
+        return ResponseEntity.ok(doctorEmail);
     }
 }

@@ -16,9 +16,7 @@ public class DoctorDto {
     private LocalDate dateOfBirth;
     private String gender;
     private String address;
-    private String bloodGroup;
-    private String emergencyContactName;
-    private String emergencyContactPhone;
     private String status;
+    private String specialisation;
 
 }

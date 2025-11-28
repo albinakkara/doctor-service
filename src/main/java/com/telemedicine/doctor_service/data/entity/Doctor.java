@@ -26,7 +26,7 @@ public class Doctor {
     @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = true)
     private String phoneNumber;
 
     @Column(nullable = false)

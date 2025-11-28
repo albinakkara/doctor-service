@@ -5,6 +5,7 @@ import com.telemedicine.doctor_service.data.repository.DoctorRepository;
 import com.telemedicine.doctor_service.dto.CreateDoctorDto;
 import com.telemedicine.doctor_service.dto.DoctorDto;
 import com.telemedicine.doctor_service.dto.SkeletonDoctorDto;
+import com.telemedicine.doctor_service.dto.mapper.DoctorMapper;
 import org.springframework.stereotype.Service;
 
 import javax.print.Doc;
@@ -45,7 +46,7 @@ public class DoctorService {
         doctor.setEmail(skeletonDoctorDto.getEmail());
         doctor.setFirstName(skeletonDoctorDto.getFirstName());
         doctor.setLastName(skeletonDoctorDto.getLastName());
-        doctor.setPhoneNumber("0000000000");  // Or null + remove NOT NULL
+        doctor.setPhoneNumber(null);  // Or null + remove NOT NULL
         doctor.setGender("UNKNOWN");
         doctor.setDateOfBirth(LocalDate.of(1900, 1, 1));
         doctor.setSpecialisation("None");
@@ -74,5 +75,14 @@ public class DoctorService {
 
     public Doctor validatePatientWithId(Long id) {
         return doctorRepository.findById(id).orElse(new Doctor());
+    }
+
+    public DoctorDto getDoctorProfile(String email) {
+        Doctor doctor = doctorRepository.findByEmail(email).orElseThrow(()->new RuntimeException("Doctor not found"));
+        return DoctorMapper.toDto(doctor);
+    }
+
+    public String getDoctorEmailById(Long id) {
+        return doctorRepository.findEmailById(id).orElseThrow(()->new RuntimeException("Doctor not found"));
     }
 }
