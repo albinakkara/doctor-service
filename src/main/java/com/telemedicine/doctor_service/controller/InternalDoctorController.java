@@ -29,8 +29,10 @@ public class InternalDoctorController {
 
     @GetMapping("/validate/{id}")
     public ResponseEntity<Boolean> validateDoctorWithId(@PathVariable("id") Long id){
-        Doctor doctor = doctorService.validatePatientWithId(id);
+        Doctor doctor = doctorService.validateDoctorWithId(id);
+        System.out.println(doctor.getId());
         boolean isValid = doctor.getId()!=null && doctor.getId().equals(id);
+        System.out.println(isValid);
         if(!isValid){
             return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
         }

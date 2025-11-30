@@ -8,7 +8,6 @@ import com.telemedicine.doctor_service.dto.SkeletonDoctorDto;
 import com.telemedicine.doctor_service.dto.mapper.DoctorMapper;
 import org.springframework.stereotype.Service;
 
-import javax.print.Doc;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -73,7 +72,7 @@ public class DoctorService {
         return doctorRepository.save(doctor);
     }
 
-    public Doctor validatePatientWithId(Long id) {
+    public Doctor validateDoctorWithId(Long id) {
         return doctorRepository.findById(id).orElse(new Doctor());
     }
 

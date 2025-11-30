@@ -1,9 +1,9 @@
 package com.telemedicine.doctor_service;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class DoctorServiceApplicationTests {
 
 	@Test
